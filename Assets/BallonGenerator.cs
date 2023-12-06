@@ -26,7 +26,7 @@ public class BallonGenerator : MonoBehaviour
     {
         int i = Random.Range(0, spawnPointList.Count);
 
-        GameObject ballon = Instantiate(GetBallon(), spawnPointList[i] - new Vector3(0, -1.5f, 0), Quaternion.Euler(-90, 0, 0));
+        GameObject ballon = Instantiate(GetBallon(), spawnPointList[i], Quaternion.Euler(-90, 0, 0));
     }
 
     private GameObject GetBallon()
@@ -63,7 +63,7 @@ public class BallonGenerator : MonoBehaviour
                     {
                         
                         spawnPointList.Add(plane.GetComponent<MeshFilter>().mesh.vertices[i] + plane.transform.position);
-                        Instantiate(debugItem, plane.GetComponent<MeshFilter>().mesh.vertices[i] + plane.transform.position, Quaternion.Euler(0, 0, 0));
+                        //Instantiate(debugItem, plane.GetComponent<MeshFilter>().mesh.vertices[i] + plane.transform.position, Quaternion.Euler(0, 0, 0));
                     }
                     //Camera.main.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Text>().text += plane.GetComponent<MeshFilter>().mesh.vertices[i] + "\n";
                 }
