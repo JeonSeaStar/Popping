@@ -17,7 +17,8 @@ public class Ballon : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.forward * speed);
+        Destroy(gameObject, 10);
+        speed += UnityEngine.Random.Range(0, 21) * 0.001f;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -33,8 +34,5 @@ public class Ballon : MonoBehaviour
         }
     }
 
-    void DestroyBallon()
-    {
-        Destroy(gameObject);
-    }
+   
 }

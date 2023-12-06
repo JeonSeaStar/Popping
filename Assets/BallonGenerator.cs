@@ -56,7 +56,12 @@ public class BallonGenerator : MonoBehaviour
             for (int i = 0; i < plane.GetComponent<MeshFilter>().mesh.vertices.Length; i++)
             {
                 if (Vector3.Distance(playerPosition.position, plane.GetComponent<MeshFilter>().mesh.vertices[i]) >= 1.5f)
-                    spawnPointList.Add(plane.GetComponent<MeshFilter>().mesh.vertices[i]);
+                {
+                    {
+                        spawnPointList.Add(plane.GetComponent<MeshFilter>().mesh.vertices[i]);
+                        UnityEngine.Debug.Log(plane.GetComponent<MeshFilter>().mesh.vertices[i]);
+                    }
+                }
             }
         }
 
