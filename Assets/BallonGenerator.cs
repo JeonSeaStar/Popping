@@ -23,7 +23,7 @@ public class BallonGenerator : MonoBehaviour
     {
         int i = Random.Range(0, spawnPointList.Count);
 
-        GameObject ballon = Instantiate(GetBallon(), spawnPointList[i], Quaternion.Euler(-90, 0, 0));
+        GameObject ballon = Instantiate(GetBallon(), spawnPointList[i] - new Vector3(0, Camera.main.transform.position.y, 0), Quaternion.Euler(-90, 0, 0));
     }
 
     private GameObject GetBallon()
@@ -58,6 +58,7 @@ public class BallonGenerator : MonoBehaviour
                 if (Vector3.Distance(playerPosition.position, plane.GetComponent<MeshFilter>().mesh.vertices[i]) >= 1.5f)
                 {
                     {
+                        
                         spawnPointList.Add(plane.GetComponent<MeshFilter>().mesh.vertices[i]);
                         UnityEngine.Debug.Log(plane.GetComponent<MeshFilter>().mesh.vertices[i]);
                     }

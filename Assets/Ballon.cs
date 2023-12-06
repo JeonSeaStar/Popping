@@ -11,14 +11,15 @@ public class Ballon : MonoBehaviour
 
     private void Awake()
     {
-        Invoke("DestroyBallon", 10);
+        Destroy(gameObject, 20);
+        speed += UnityEngine.Random.Range(0, 21) * 0.001f;
     }
 
 
     void Update()
     {
-        Destroy(gameObject, 10);
-        speed += UnityEngine.Random.Range(0, 21) * 0.001f;
+        
+        transform.Translate(Vector3.forward * speed);
     }
 
     private void OnTriggerEnter(Collider other)
