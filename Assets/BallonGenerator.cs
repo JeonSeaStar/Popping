@@ -58,12 +58,12 @@ public class BallonGenerator : MonoBehaviour
         {
             for (int i = 0; i < plane.GetComponent<MeshFilter>().mesh.vertices.Length; i++)
             {
-                if (Vector3.Distance(playerPosition.position, plane.GetComponent<MeshFilter>().mesh.vertices[i]) >= 1.5f)
+                if (Vector3.Distance(playerPosition.position, plane.GetComponent<MeshFilter>().mesh.vertices[i]+ plane.transform.position) >= 1.5f)
                 {
                     {
                         
-                        spawnPointList.Add(plane.GetComponent<MeshFilter>().mesh.vertices[i]);
-                        Instantiate(debugItem, plane.GetComponent<MeshFilter>().mesh.vertices[i], Quaternion.Euler(0, 0, 0));
+                        spawnPointList.Add(plane.GetComponent<MeshFilter>().mesh.vertices[i] + plane.transform.position);
+                        Instantiate(debugItem, plane.GetComponent<MeshFilter>().mesh.vertices[i] + plane.transform.position, Quaternion.Euler(0, 0, 0));
                     }
                     //Camera.main.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Text>().text += plane.GetComponent<MeshFilter>().mesh.vertices[i] + "\n";
                 }
