@@ -1878,6 +1878,8 @@ MonoBehaviour:
   - 0.5
   currentSpawnTime: 0
   playerPosition: {fileID: 709240836}
+  debugItem: {fileID: 6923551386472019607, guid: 187f116b26391ef44ade5d6590a06227,
+    type: 3}
   vertices: []
   points: []
   radius: 1.5
