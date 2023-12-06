@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.ARFoundation;
 using TMPro;
+using UnityEngine.UI;
 
 public class BallonGenerator : MonoBehaviour
 {
@@ -60,7 +61,7 @@ public class BallonGenerator : MonoBehaviour
                     {
                         
                         spawnPointList.Add(plane.GetComponent<MeshFilter>().mesh.vertices[i]);
-                        UnityEngine.Debug.Log(plane.GetComponent<MeshFilter>().mesh.vertices[i]);
+                        Camera.main.transform.GetChild(0).GetChild(0).gameObject.GetComponent<Text>().text += plane.GetComponent<MeshFilter>().mesh.vertices[i] + "\n";
                     }
                 }
             }
